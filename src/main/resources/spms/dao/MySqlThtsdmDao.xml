@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- namespace는 단순히 mapper를 묶는 기능
+        Dao에서 호출할 때 사용
+   -->
+ <mapper namespace="spms.dao.ThtsdmDao">
+ 	<resultMap type
+ 
+ 
+ 	  protected String make_date; //생성일자
+	  protected String gnr_code; //장르코드
+	  protected String store_code; //점포코드
+	  protected String set_code; //세트상품코드
+	  protected int seq; //순번
+	  protected String make_flag; //생성구분
+	  protected int qty; //수량
+	  protected Date ent_date; //등록일
+	  protected String ent_empno; //등록자
+	  protected Date mod_date;//변경일
+	  protected String mod_empno; //변경자
+ 
+ 	return sqlSession.selectList("spms.dao.ThtsdmDao.selectList", paramMap);
+ 	
+ 	<select id="selectList" parameterType="map" resultMap>
+ 	
+ 	</select>
+ 
+ 
+ </mapper>

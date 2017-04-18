@@ -12,10 +12,24 @@
         http://www.springframework.org/schema/jee 
         http://www.springframework.org/schema/jee/spring-jee.xsd">
 
+  <!-- @Component, @Repository, @Service, @Controller 가 붙은
+  	 클래스를 검색하라는 선언  spms패키지 아래
+  	 @Autowired, @Value, @Inject...모두 자동으로 선언
+   -->
   <context:component-scan base-package="spms">
     <context:exclude-filter type="regex" expression="spms.controls.*"/>
   </context:component-scan>
 
+ <!-- 
+ 	톰켓서버의 context.xml     
+ 	<Resource name="jdbc/myconn" auth="Container" type="javax.sql.DataSource"
+ 	web.xml에 
+ 	 <resource-ref>
+      <res-ref-name>jdbc/myconn</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  -->
   <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/myconn"/>
   
   <bean id="transactionManager" 
