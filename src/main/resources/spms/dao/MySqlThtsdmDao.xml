@@ -7,25 +7,30 @@
         Dao에서 호출할 때 사용
    -->
  <mapper namespace="spms.dao.ThtsdmDao">
- 	<resultMap type
+ 	<resultMap type="map" id="thtsdmReaultMap" >
+ 		<result column="MAKE_DATE" property="makeDate" javaType="java.sql.Date"/>
+ 		<result column="GNR_CODE"  property="gnrCode" javaType="String"/>
+ 		<result column="STORE_CODE" property="storeCode" javaType="String"/>
+ 		<result column="SET_CODE" property="setCode" javaType="String"/>
+ 		<result column="SEQ" property="seq" javaType="String"/>
+ 		<result column="MAKE_FLAG" property="makeFlag" javaType="String"/>
+ 		<result column="QTY" property="qty" javaType="String"/>
+ 		<result column="ENT_DATE" property="entDate" javaType="String"/>
+ 		<result column="ENT_EMPNO" property="endEmpno" javaType="String"/>
+ 		<result column="MOD_DATE" property="modDate" javaType="String"/>
+ 		<result column="MOD_EMPNO" property="modEmpno" javaType="String"/>
+ 	</resultMap>
  
- 
- 	  protected String make_date; //생성일자
-	  protected String gnr_code; //장르코드
-	  protected String store_code; //점포코드
-	  protected String set_code; //세트상품코드
-	  protected int seq; //순번
-	  protected String make_flag; //생성구분
-	  protected int qty; //수량
-	  protected Date ent_date; //등록일
-	  protected String ent_empno; //등록자
-	  protected Date mod_date;//변경일
-	  protected String mod_empno; //변경자
- 
- 	return sqlSession.selectList("spms.dao.ThtsdmDao.selectList", paramMap);
- 	
- 	<select id="selectList" parameterType="map" resultMap>
- 	
+ 	<select id="selectList" parameterType="map" resultMap="thtsdmReaultMap">
+ 	select MAKE_DATE, GNR_CODE, STORE_CODE, SET_CODE, SEQ, MAKE_FLAG
+ 	,QTY,ENT_DATE,ENT_EMPNO,MOD_DATE,MOD_EMPNO
+ 	from thtsdm
+ 	order by
+ 	<choose>
+ 		<when test="orderCond=='MAKE_DATE_ASC'">MAKE_DATE asc</when>
+ 		<when test="orderCond=='MAKE_DATE_DESC'">MAKE_DATE desc</when>
+ 		<otherwise>MAKE_DATE desc, SEQ desc</otherwise>
+ 	</choose>
  	</select>
  
  

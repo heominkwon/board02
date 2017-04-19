@@ -37,6 +37,7 @@
     <property name="dataSource" ref="dataSource" />
   </bean>
   
+  <!-- 스프링은 별도 mysql설정파일을 작성하지 않고 아래와 같이 설정하여 사용함 -->
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="dataSource" ref="dataSource" />
     <property name="typeAliasesPackage" value="spms.vo" />

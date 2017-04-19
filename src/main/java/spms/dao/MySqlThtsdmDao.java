@@ -2,13 +2,14 @@ package spms.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import spms.vo.Thtsdm;
+
 
 
 //@Repository DAO와 같은 퍼시스턴스 역할을 수행하는 클래스에 붙인다.
@@ -27,7 +28,7 @@ public class MySqlThtsdmDao implements ThtsdmDao {
 	}
 
 	@Override
-	public List<Thtsdm> selectList(HashMap<String, Object> paramMap)
+	public List<Map<String, Object>> selectList(HashMap<String, Object> paramMap)
 			throws Exception {
 		//sqlSessionFactory로 sqlsession생성
 		//DB연결정보를 가져옴
@@ -41,28 +42,28 @@ public class MySqlThtsdmDao implements ThtsdmDao {
 		}
 	}
 
-	@Override
-	public int insert(Thtsdm thtsdm) throws Exception {
+//	@Override
+	//public int insert(Thtsdm thtsdm) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
-	}
+	//	return 0;
+	//}
 
-	@Override
-	public Thtsdm selectOne(int no) throws Exception {
+	//@Override
+	//public Thtsdm selectOne(int no) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
+	//	return null;
+//	}
 
-	@Override
-	public int update(Thtsdm thtsdm) throws Exception {
+	//@Override
+	//public int update(Thtsdm thtsdm) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
-	}
+	//	return 0;
+//	}
 
-	@Override
-	public int delete(int no) throws Exception {
+//	@Override
+//	public int delete(int no) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
-	}
+	//	return 0;
+//}
 
 }

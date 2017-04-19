@@ -2,14 +2,13 @@ package spms.dao;
 
 import java.util.HashMap;
 import java.util.List;
-
-import spms.vo.Thtsdm;
+import java.util.Map;
 
 public interface ThtsdmDao {
-	List<Thtsdm> selectList(HashMap<String,Object> paramMap) throws Exception;
-	int insert(Thtsdm thtsdm) throws Exception;
-	Thtsdm selectOne(int no) throws Exception;
-	int update(Thtsdm thtsdm) throws Exception;
-	int delete(int no) throws Exception;
+	List<Map<String, Object>> selectList(HashMap<String,Object> paramMap) throws Exception;
+	//int insert(Map<String, Object> thtsdm) throws Exception;
+	//Thtsdm selectOne(int no) throws Exception;
+	//int update(Thtsdm thtsdm) throws Exception;
+	//int delete(int no) throws Exception;
 
 }
