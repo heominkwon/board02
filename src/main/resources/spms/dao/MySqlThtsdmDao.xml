@@ -6,7 +6,7 @@
   <!-- namespace는 단순히 mapper를 묶는 기능
         Dao에서 호출할 때 사용
    -->
- <mapper namespace="spms.dao.ThtsdmDao">
+ <mapper namespace="spms.dao.MySqlThtsdmDao">
  	<resultMap type="map" id="thtsdmReaultMap" >
  		<result column="MAKE_DATE" property="makeDate" javaType="java.sql.Date"/>
  		<result column="GNR_CODE"  property="gnrCode" javaType="String"/>
@@ -32,6 +32,13 @@
  		<otherwise>MAKE_DATE desc, SEQ desc</otherwise>
  	</choose>
  	</select>
+ 	
+ 	<insert id="insert"	parameterType="map">
+ 	insert into THTSDM(MAKE_DATE, GNR_CODE, STORE_CODE, SET_CODE, SEQ, MAKE_FLAG
+ 	,QTY,ENT_DATE,ENT_EMPNO,MOD_DATE,MOD_EMPNO)
+ 	values(#{makeDate},#{gnrCode},#{storeCode},#{setCode},#{seq},#{makeFlag},
+ 	#{qty},#{entDate},#{endEmpno},#{modDate},#{modEmpno} )
+ 	</insert>
  
  
  </mapper>

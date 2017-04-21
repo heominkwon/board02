@@ -36,17 +36,23 @@ public class MySqlThtsdmDao implements ThtsdmDao {
 		try{
 			//spms.dao.ThtsdmDao : SQL맵퍼의 네임스페이스이름
 			//selectList : SQL문 ID
-			return sqlSession.selectList("spms.dao.ThtsdmDao.selectList", paramMap);
+			return sqlSession.selectList("spms.dao.MySqlThtsdmDao.selectList", paramMap);
 		} finally {
 			sqlSession.close();
 		}
 	}
 
-//	@Override
-	//public int insert(Thtsdm thtsdm) throws Exception {
-		// TODO Auto-generated method stub
-	//	return 0;
-	//}
+	@Override
+	public int insert(Map<String, Object> paramMap) throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try{
+			int count = sqlSession.insert("spms.dao.MySqlThtsdmDao.insert", paramMap);
+			sqlSession.commit();
+			return count;
+		} finally {
+			sqlSession.close();
+		}
+	}
 
 	//@Override
 	//public Thtsdm selectOne(int no) throws Exception {

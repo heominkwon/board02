@@ -34,6 +34,9 @@ public class ProjectAddController {
   
   @RequestMapping(value="/project/add.do", method=RequestMethod.POST)
   public String add(Project project) throws Exception {
+	 
+	 
+	  
     projectDao.insert(project);
     return "redirect:list.do";
   }
