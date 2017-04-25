@@ -33,11 +33,13 @@
  	</choose>
  	</select>
  	
- 	<insert id="insert"	parameterType="map">
+
+ 	
+ 	<insert id="insert"	parameterType="thtsdm">
  	insert into THTSDM(MAKE_DATE, GNR_CODE, STORE_CODE, SET_CODE, SEQ, MAKE_FLAG
  	,QTY,ENT_DATE,ENT_EMPNO,MOD_DATE,MOD_EMPNO)
- 	values(#{makeDate},#{gnrCode},#{storeCode},#{setCode},#{seq},#{makeFlag},
- 	#{qty},#{entDate},#{endEmpno},#{modDate},#{modEmpno} )
+ 	values (#{make_date},#{gnr_code},#{store_code},#{set_code},#{seq},#{make_flag},
+ 	#{qty},#{ent_date},#{ent_empno},#{mod_date},#{mod_empno})
  	</insert>
  
  

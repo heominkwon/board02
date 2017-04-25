@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import spms.vo.Thtsdm;
+
 
 
 
@@ -42,11 +44,11 @@ public class MySqlThtsdmDao implements ThtsdmDao {
 		}
 	}
 
-	@Override
-	public int insert(Map<String, Object> paramMap) throws Exception {
+
+	public int insert(Thtsdm thtsdm) throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try{
-			int count = sqlSession.insert("spms.dao.MySqlThtsdmDao.insert", paramMap);
+			int count = sqlSession.insert("spms.dao.MySqlThtsdmDao.insert", thtsdm);
 			sqlSession.commit();
 			return count;
 		} finally {

@@ -32,6 +32,8 @@
     </choose>
   </select>
   
+
+  
   <insert id="insert" parameterType="project">
     insert into PROJECTS(PNAME,CONTENT,STA_DATE,END_DATE,STATE,CRE_DATE,TAGS)
     values (#{title},#{content},#{startDate},#{endDate},0,now(),#{tags})
